@@ -4,11 +4,7 @@ require 'yaml'
 # Module that can be included (mixin) to take and output YAML data
 module YamlBuddy
   def take_yaml(yaml)
-    @data = []
-    yaml = YAML.safe_load(yaml)
-    yaml.each do |hash|
-      @data << hash
-    end
+    @data = YAML.safe_load(yaml)
   end
 
   def to_yaml
